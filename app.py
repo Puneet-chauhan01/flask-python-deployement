@@ -25,7 +25,7 @@ def predict():
     img = request.files['imageFile']
     imgPath = "images/"+ img.filename
     print(img.filename)
-    # img.save("./images/"+img.filename)
+    img.save("./images/"+img.filename)
     # image = cv2.imread("/images/"+img.filename)
     classification = predictImage(imgPath)
     
