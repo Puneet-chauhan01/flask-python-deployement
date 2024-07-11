@@ -14,6 +14,7 @@ def custom_loss_deserialization(config):
 tf.keras.losses.get = custom_loss_deserialization
 
 def predictImage(imgPath):
+    imgPath = 'static/' + imgPath
     # Load the model without compiling
     model_path = os.path.join('models', 'happysadimagemodel2.h5')
     new_model = load_model(model_path, compile=False)
@@ -33,7 +34,6 @@ def predictImage(imgPath):
         mood = "sad"
     else:
         mood = "happy"
-
     return mood
 
     # while True:
